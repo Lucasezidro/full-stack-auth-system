@@ -13,6 +13,7 @@ import {
 import { useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { CreateAccountResponse } from '../utils/create-account-schema'
+import { FormErrorMessage } from './error/form-error-message'
 
 export function AddressForm() {
   const {
@@ -55,7 +56,7 @@ export function AddressForm() {
               </div>
 
               {errors.zipCode && (
-                <span className="">{errors.zipCode.message}</span>
+                <FormErrorMessage message={errors.zipCode.message} />
               )}
             </div>
           </div>
@@ -76,7 +77,7 @@ export function AddressForm() {
               </div>
 
               {errors.street && (
-                <span className="">{errors.street.message}</span>
+                <FormErrorMessage message={errors.street.message} />
               )}
             </div>
 
@@ -98,7 +99,7 @@ export function AddressForm() {
               </div>
 
               {errors.addressNumber && (
-                <span className="">{errors.addressNumber.message}</span>
+                <FormErrorMessage message={errors.addressNumber.message} />
               )}
             </div>
 
@@ -120,7 +121,7 @@ export function AddressForm() {
               </div>
 
               {errors.neighborhood && (
-                <span className="">{errors.neighborhood.message}</span>
+                <FormErrorMessage message={errors.neighborhood.message} />
               )}
             </div>
           </div>
@@ -144,7 +145,7 @@ export function AddressForm() {
               </div>
 
               {errors.complement && (
-                <span className="">{errors.complement.message}</span>
+                <FormErrorMessage message={errors.complement.message} />
               )}
             </div>
 
@@ -162,7 +163,9 @@ export function AddressForm() {
                 />
               </div>
 
-              {errors.city && <span className="">{errors.city.message}</span>}
+              {errors.city && (
+                <FormErrorMessage message={errors.city.message} />
+              )}
             </div>
 
             <div className="space-y-3">
@@ -179,7 +182,9 @@ export function AddressForm() {
                 />
               </div>
 
-              {errors.state && <span className="">{errors.state.message}</span>}
+              {errors.state && (
+                <FormErrorMessage message={errors.state.message} />
+              )}
             </div>
           </div>
         </section>

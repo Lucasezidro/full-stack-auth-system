@@ -6,7 +6,7 @@ export const createAccountSchema = z.object({
   password: z
     .string()
     .min(6, { message: 'The password must be at least 6 characters long.' }),
-  zipCode: z.string().optional(),
+  zipCode: z.string().min(1, { message: 'Zip code is required.' }),
   street: z.string().min(1, { message: 'Street is required.' }),
   addressNumber: z.string().min(1, { message: 'Address number is required.' }),
   neighborhood: z.string().min(1, { message: 'Neighborhood is required' }),

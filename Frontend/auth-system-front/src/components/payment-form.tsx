@@ -10,6 +10,7 @@ import {
 import { useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { CreateAccountResponse } from '../utils/create-account-schema'
+import { FormErrorMessage } from './error/form-error-message'
 
 export function PaymentForm() {
   const {
@@ -84,7 +85,7 @@ export function PaymentForm() {
               </div>
 
               {errors.cardNumber && (
-                <span className="">{errors.cardNumber.message}</span>
+                <FormErrorMessage message={errors.cardNumber.message} />
               )}
             </div>
 
@@ -106,7 +107,7 @@ export function PaymentForm() {
               </div>
 
               {errors.expirationDate && (
-                <span className="">{errors.expirationDate.message}</span>
+                <FormErrorMessage message={errors.expirationDate.message} />
               )}
             </div>
           </div>
@@ -130,7 +131,7 @@ export function PaymentForm() {
               </div>
 
               {errors.securityCode && (
-                <span className="">{errors.securityCode.message}</span>
+                <FormErrorMessage message={errors.securityCode.message} />
               )}
             </div>
 
@@ -208,7 +209,7 @@ export function PaymentForm() {
               </div>
 
               {errors.responsibleName && (
-                <span className="">{errors.responsibleName.message}</span>
+                <FormErrorMessage message={errors.responsibleName.message} />
               )}
             </div>
           </div>
